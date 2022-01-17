@@ -4,10 +4,9 @@ const outputRef = document.querySelector('#name-output');
 const EMPTY_INPUT = 'Anonymous';
 
 const onInputChange = event => {
-  outputRef.textContent = event.currentTarget.value;
-  if (event.currentTarget.value === '') {
-    outputRef.textContent = EMPTY_INPUT;
-  }
+  event.currentTarget.value === ''
+    ? (outputRef.textContent = EMPTY_INPUT)
+    : (outputRef.textContent = event.currentTarget.value);
 };
 
 inputRef.addEventListener('input', onInputChange);
